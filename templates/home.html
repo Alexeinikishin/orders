@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for order in order_list %}
+<div class="post-entry">
+	<h2><a href="{% url 'order_detail' order.pk %}">{{order.customer}}</a></h2>
+	{{ order.task|linebreaks }}
+	<p>Цена: {{ order.price }} руб.</p>
+
+</div>
+{% endfor %}
+{% endblock content %}
